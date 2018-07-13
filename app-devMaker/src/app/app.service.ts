@@ -11,7 +11,7 @@ export class AppService {
     private http: Http
   ) { }
   getCep() {
-    return this.http.get('viacep.com.br/ws/01001000/json/')
+    return this.http.get('https://viacep.com.br/ws/01001000/json/')
     .pipe(map(data => data.json()));
   }
 }
