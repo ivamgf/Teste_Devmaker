@@ -2,76 +2,77 @@
   <div class='row'>
     <div class='col-2'><div><app-side></app-side></div></div>
       <div class='col-10'>
-
-              <nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-right">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="material-icons">exit_to_app</i>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+        <nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-right">
+          <div class='col-11'></div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/feed">
+                <i class="material-icons">exit_to_app</i>
+              </a>
+            </li>
+          </ul>
+        </nav>
         <div class='row'>
           <div class='col-6'>
             <div class="col s2">
               <img src="assets/images/user.png" alt="user" class="circle responsive-img"> <!-- notice the "circle" class -->
             </div>
+            <span>Adicionar Foto</span>
           </div>
           <div class='col-6 form'>
           <form>
             <div class="form-group">
               <label for="nome">Nome:</label>
-              <input type="text" class="form-control" id="nome">
+              <input matInput type="text" class="form-control" id="nome" formControlName='nome'>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email">
+                <input matInput type="email" class="form-control" id="email" formControlName='email'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="telefone">Telefone:</label>
-                <input type="tel" class="form-control" id="telefone">
+                <input matInput type="tel" class="form-control" id="telefone" formControlName='telefone'>
               </div>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="cep">CEP:</label>
-                <input type="text" class="form-control" id="cep">
+                <input matInput type="text" class="form-control" id="cep" formControlName='cep' (blur)='consultaCep()'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="rua">Rua:</label>
-                <input type="text" class="form-control" id="rua">
+                <input matInput type="text" class="form-control" id="rua" formControlName='rua'>
               </div>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="num">Número:</label>
-                <input type="number" class="form-control" id="num">
+                <input matInput type="number" class="form-control" id="num" formControlName='num'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="comp">Complemento:</label>
-                <input type="text" class="form-control" id="comp">
+                <input matInput type="text" class="form-control" id="comp" formControlName='comp'>
               </div>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="est">Estado:</label>
-                <input type="text" class="form-control" id="uf">
+                <input type="text" class="form-control" id="uf" formControlName='uf'>
               </div>
               <div class='col-6 col-sm-6 col-md-6'>
                 <label for="cid">Cidade:</label>
-                <input type="text" class="form-control" id="cid">
+                <input matInput type="text" class="form-control" id="cid" formControlName='cid'>
               </div>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="pwd">Senha:</label>
-                <input type="password" class="form-control" id="pwd">
+                <input matInput type="password" class="form-control" id="pwd" formControlName='pwd'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="pwd">Confirmar Senha:</label>
-                <input type="password" class="form-control" id="conf">
+                <input matInput type="password" class="form-control" id="conf" formControlName='conf'>
               </div>
             </div>
             <button type="submit" class="btn btn-primary btn1">Cadastrar</button>
