@@ -23,56 +23,56 @@
           <form formGroup = "form_reg">
             <div class="form-group">
               <label for="nome">Nome:</label>
-              <input type="text" class="form-control" id="nome">
+              <input matInput type="text" class="form-control" id="nome" formControlName='nome'>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email">
+                <input matInput type="email" class="form-control" id="email" formControlName='email'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="telefone">Telefone:</label>
-                <input type="tel" class="form-control" id="telefone">
+                <input matInput type="tel" class="form-control" id="telefone" formControlName='telefone'>
               </div>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="cep">CEP:</label>
-                <input type="text" class="form-control" id="cep">
+                <input matInput type="text" class="form-control" id="cep" (blur)='onGetCep()' formControlName='cep'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="rua">Rua:</label>
-                <input type="text" class="form-control" id="rua">
+                <input matInput type="text" class="form-control" id="rua" formControlName='rua'>
               </div>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="num">Número:</label>
-                <input type="number" class="form-control" id="num">
+                <input matInput type="number" class="form-control" id="num" formControlName='num'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="comp">Complemento:</label>
-                <input type="text" class="form-control" id="comp">
+                <input matInput type="text" class="form-control" id="comp" formControlName='comp'>
               </div>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="est">Estado:</label>
-                <input type="text" class="form-control" id="uf">
+                <input matInput type="text" class="form-control" id="uf" formControlName='uf'>
               </div>
               <div class='col-6 col-sm-6 col-md-6'>
                 <label for="cid">Cidade:</label>
-                <input type="text" class="form-control" id="cid">
+                <input matInput type="text" class="form-control" id="cid" formControlName='cid'>
               </div>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="pwd">Senha:</label>
-                <input type="password" class="form-control" id="pwd">
+                <input matInput type="password" class="form-control" id="pwd" formControlName='pwd'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
-                <label for="pwd">Confirmar Senha:</label>
-                <input type="password" class="form-control" id="conf">
+                <label for="conf">Confirmar Senha:</label>
+                <input matInput type="password" class="form-control" id="conf" formControlName='conf'>
               </div>
             </div>
             <button type="submit" class="btn btn-primary btn1" (click)='onGetCep()'>Cadastrar</button>
