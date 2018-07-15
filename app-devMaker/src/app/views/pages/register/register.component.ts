@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, RequestOptions } from '@angular/http';
 import { AppService } from '../../../app.service';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { map } from 'rxjs/operators';
+import { Headers } from '@angular/http';
 
-
+export const contentHeaders = new Headers();
+contentHeaders.append('Accept', 'application/json');
+contentHeaders.append('Content-Type', 'application/json');
+contentHeaders.append('Access-Control-Allow-Origin', '*');
+contentHeaders.append('Access-Control-Allow-Credentials', 'true');
 
 @Component({
   selector: 'app-register',
@@ -79,5 +84,16 @@ export class RegisterComponent implements OnInit {
     this.getData.localidade = '';
     this.getConsultCep.pwd = '';
     this.getConsultCep.conf = '';
+  }
+  onSubmit() {
+    if ( this.getConsultCep.pwd === this.getConsultCep.conf ) {
+    const options = new RequestOptions({headers: contentHeaders});
+    return this.http.post('https://desafia.sae.digital/api/shows/', this.getConsultCep, options)
+    .pipe(map((response: Response) => response.json()))
+    .subscribe(
+      data => this.getConsultCep = data,
+      () => console.log(this.getConsultCep)
+    );
+    }
   }
 }

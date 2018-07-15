@@ -16,8 +16,8 @@
           <div class='col-6'>
             <div class="col s2">
               <img src="assets/images/user.png" alt="user" class="circle responsive-img"> <!-- notice the "circle" class -->
-            </div>
-            <span>Adicionar Foto</span>
+            </div><br><br><br>
+            <span><a href='#'>Adicionar Foto</a></span>
           </div>
           <div class='col-6 form'>
           <form>
@@ -75,7 +75,7 @@
                 <input matInput type="password" class="form-control" id="conf" name='conf' [(ngModel)]="getConsultCep.conf" [ngModelOptions]='{standalone: true}'>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary btn1" (click)='onGetCep()'>Cadastrar</button>
+            <button type="submit" class="btn btn-primary btn1" (click)='onSubmit()'>Cadastrar</button>
             <button type="button" class="btn btn-primary btn2" (click)='reset()'>Limpar</button>
           </form>
         </div>
