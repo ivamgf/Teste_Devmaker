@@ -19,12 +19,13 @@
         <li class="list-group-item">
           <h5>Feed</h5>
         </li>
-        <li class="list-group-item">
-          <h6><strong>Título</strong></h6>
-          <span>Lorem ipsum iaculis etiam orci nibh, leo nec sollicitudin eleifend arcu libero, auctor convallis venenatis torquent. libero lacinia fames arcu massa aliquam posuere suspendisse nec, sem curae auctor scelerisque dictum imperdiet aenean per, in senectus tempus fames volutpat vulputate tortor.</span>
+        <li class="list-group-item" *ngFor='let i of getDataPost'>
+          <h6><strong>{{i.title}}</strong></h6>
+          <span>{{i.body}}</span>
         </li>
       </ul>
     </div>
+
   </div>
   <div>
 

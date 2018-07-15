@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() { }
-  onGetCep() {
+  /*onGetCep() {
     const cep = this.form_reg.get('cep').value;
     this.cep = cep.replace(/\D/g, '');
     if (cep !== '') {
@@ -47,8 +47,8 @@ export class RegisterComponent implements OnInit {
      );
     }
   }
-  }
-  reset() {
+  }*/
+  /*reset() {
     this.form_reg.patchValue(
       {
         rua: this.getData.rua,
@@ -58,7 +58,8 @@ export class RegisterComponent implements OnInit {
         cid: this.getData.cid
       }
     );
-  }
+  }*/
+  /*
   populaDados() {
     this.form_reg.patchValue(
       {
@@ -70,4 +71,5 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
+  */
 }
