@@ -23,7 +23,17 @@ export class RegisterComponent implements OnInit {
   getData: any;
   form_reg: FormGroup;
   getConsultCep: any = {
-    cep: ''
+    nome: '',
+    email: '',
+    telefone: '',
+    cep: '',
+    logradouro: '',
+    num: '',
+    comp: '',
+    uf: '',
+    localidade: '',
+    pwd: '',
+    conf: ''
   };
   constructor(
     public httpAppService: AppService,
@@ -56,5 +66,18 @@ export class RegisterComponent implements OnInit {
         error => alert(error),
         () => this.rua = this.getData.logradouro,
      );
+  }
+  reset() {
+    this.getConsultCep.nome = '';
+    this.getConsultCep.email = '';
+    this.getConsultCep.telefone = '';
+    this.getConsultCep.cep = '';
+    this.getData.logradouro = '';
+    this.getConsultCep.num = '';
+    this.getData.comp = '';
+    this.getData.uf = '';
+    this.getData.localidade = '';
+    this.getConsultCep.pwd = '';
+    this.getConsultCep.conf = '';
   }
 }

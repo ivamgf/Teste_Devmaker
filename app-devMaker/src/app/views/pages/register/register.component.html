@@ -23,16 +23,16 @@
           <form>
             <div class="form-group">
               <label for="nome">Nome:</label>
-              <input matInput type="text" class="form-control" id="nome" name='nome'>
+              <input matInput type="text" class="form-control" id="nome" name='nome' [(ngModel)]="getConsultCep.nome" [ngModelOptions]='{standalone: true}'>
             </div>
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="email">Email:</label>
-                <input matInput type="email" class="form-control" id="email" name='email'>
+                <input matInput type="email" class="form-control" id="email" name='email' [(ngModel)]="getConsultCep.email" [ngModelOptions]='{standalone: true}'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="telefone">Telefone:</label>
-                <input matInput type="tel" class="form-control" id="telefone" name='telefone'>
+                <input matInput type="tel" class="form-control" id="telefone" name='telefone' [(ngModel)]="getConsultCep.telefone" [ngModelOptions]='{standalone: true}'>
               </div>
             </div>
             <div class="form-group row">
@@ -48,11 +48,11 @@
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="num">Número:</label>
-                <input matInput type="number" class="form-control" id="num" name='num'>
+                <input matInput type="number" class="form-control" id="num" name='num' [(ngModel)]="getConsultCep.num" [ngModelOptions]='{standalone: true}'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="comp">Complemento:</label>
-                <input matInput type="text" class="form-control" id="comp" name='comp' [ngModel]="getData.complemento" [ngModelOptions]='{standalone: true}'>
+                <input matInput type="text" class="form-control" id="comp" name='comp' [ngModel]="getData.comp" [ngModelOptions]='{standalone: true}'>
               </div>
             </div>
             <div class="form-group row">
@@ -68,15 +68,15 @@
             <div class="form-group row">
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="pwd">Senha:</label>
-                <input matInput type="password" class="form-control" id="pwd" name='pwd'>
+                <input matInput type="password" class="form-control" id="pwd" name='pwd' [(ngModel)]="getConsultCep.pwd" [ngModelOptions]='{standalone: true}'>
               </div>
               <div class='col-12 col-sm-6 col-md-6'>
                 <label for="conf">Confirmar Senha:</label>
-                <input matInput type="password" class="form-control" id="conf" name='conf'>
+                <input matInput type="password" class="form-control" id="conf" name='conf' [(ngModel)]="getConsultCep.conf" [ngModelOptions]='{standalone: true}'>
               </div>
             </div>
             <button type="submit" class="btn btn-primary btn1" (click)='onGetCep()'>Cadastrar</button>
-            <button type="button" class="btn btn-primary btn2">Limpar</button>
+            <button type="button" class="btn btn-primary btn2" (click)='reset()'>Limpar</button>
           </form>
         </div>
       </div>
