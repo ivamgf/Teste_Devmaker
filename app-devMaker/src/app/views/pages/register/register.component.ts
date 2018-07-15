@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { map } from 'rxjs/operators';
 
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,19 +13,18 @@ import { map } from 'rxjs/operators';
   providers: [AppService]
 })
 export class RegisterComponent implements OnInit {
-  nome = new FormControl();
-  email = new FormControl();
-  telefone = new FormControl();
-  cep = new FormControl();
-  rua = new FormControl();
-  num = new FormControl();
-  comp = new FormControl();
-  uf = new FormControl();
-  cid = new FormControl();
-  pwd = new FormControl();
-  conf = new FormControl();
+  rua: string;
+  logradouro: string;
+  complemento: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+  cep: any;
   getData: any;
   form_reg: FormGroup;
+  getConsultCep: any = {
+    cep: ''
+  };
   constructor(
     public httpAppService: AppService,
     public http: Http
@@ -43,33 +43,18 @@ export class RegisterComponent implements OnInit {
     .subscribe(
         data => this.getData = data,
         error => alert(error),
-        () => console.log(this.getData)
+        (_data: any) => this.populaDados()
      );
     }
   }
   }*/
-  /*reset() {
-    this.form_reg.patchValue(
-      {
-        rua: this.getData.rua,
-        num: this.getData.num,
-        comp: this.getData.comp,
-        uf: this.getData.uf,
-        cid: this.getData.cid
-      }
-    );
-  }*/
-  /*
-  populaDados() {
-    this.form_reg.patchValue(
-      {
-        rua: null,
-        num: null,
-        comp: null,
-        uf: null,
-        cid: null
-      }
-    );
+  onGetCep() {
+    return this.http.get(`https://viacep.com.br/ws/${this.getConsultCep.cep}/json/`)
+    .pipe(map(data => data.json()))
+    .subscribe(
+        data => this.getData = data,
+        error => alert(error),
+        () => this.rua = this.getData.logradouro,
+     );
   }
-  */
 }
